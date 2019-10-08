@@ -69,7 +69,9 @@ public class Config {
     public static final String NAME_BLINDNESS = "Attribute.Blindness.Name";
     public static final String NAME_SLOWNESS = "Attribute.Slowness.Name";
     public static final String NAME_LIGHTNING = "Attribute.Lightning.Name";
+    public static final String DAMAGE_LIGHTNING = "Attribute.Lightning.Damage";
     public static final String NAME_TEARING = "Attribute.Tearing.Name";
+    public static final String DAMAGE_TEARING = "Attribute.Tearing.Damage";
     public static final String VALUE_EXP_ADDITION = "Attribute.ExpAddition.Value";
     public static final String VALUE_SPEED = "Attribute.Speed.Value";
     public static final String VALUE_HEALTH = "Attribute.Health.Value";
@@ -299,9 +301,10 @@ public class Config {
         config.set(NAME_POISON, "中毒几率");
         config.set(NAME_BLINDNESS, "失明几率");
         config.set(NAME_SLOWNESS, "缓慢几率");
-        config.set(NAME_LIGHTNING, "雷霆几率");
+        config.set(NAME_LIGHTNING, "雷霆几率" );
+        config.set(DAMAGE_LIGHTNING, 50);
         config.set(NAME_TEARING, "撕裂几率");
-
+        config.set(DAMAGE_TEARING, 50);
         config.set(VALUE_EXP_ADDITION, 1);
         config.set(VALUE_SPEED, 1);
 

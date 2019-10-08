@@ -36,11 +36,12 @@ public class TearingAttribute extends SubAttribute {
         if (eventData instanceof DamageEventData) {
             DamageEventData damageEventData = (DamageEventData) eventData;
             if (getAttributes()[0] > 0 && probability(getAttributes()[0] - damageEventData.getEntityAttributeDoubles("Toughness")[0])) {
+                //取一个1-3的随机数
                 int size = SXAttribute.getRandom().nextInt(3) + 1;
-                double tearingDamage = damageEventData.getEntity().getHealth() / 100;
+                //撕裂伤害 生物当前血量除以100
+                double tearingDamage = damageEventData.getDamage()*(Config.getConfig().getDouble(Config.DAMAGE_TEARING)/100);
                 new BukkitRunnable() {
                     int i = 0;
-
                     @Override
                     public void run() {
                         i++;

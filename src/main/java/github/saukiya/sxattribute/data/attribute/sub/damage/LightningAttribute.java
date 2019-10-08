@@ -32,7 +32,7 @@ public class LightningAttribute extends SubAttribute {
             DamageEventData damageEventData = (DamageEventData) eventData;
             if (getAttributes()[0] > 0 && probability(getAttributes()[0] - damageEventData.getEntityAttributeDoubles("Toughness")[0])) {
                 damageEventData.getEntity().getWorld().strikeLightningEffect(damageEventData.getEntity().getLocation());
-                double lightningDamage = damageEventData.getEntity().getHealth() * SXAttribute.getRandom().nextDouble() / 10;
+                double lightningDamage = damageEventData.getDamage()*(Config.getConfig().getDouble(Config.DAMAGE_LIGHTNING)/100);
                 damageEventData.getEntity().setHealth(damageEventData.getEntity().getHealth() - lightningDamage);
                 damageEventData.sendHolo(Message.getMsg(Message.PLAYER__HOLOGRAPHIC__LIGHTNING, getDf().format(lightningDamage)));
                 Message.send(damageEventData.getDamager(), Message.PLAYER__BATTLE__LIGHTNING, damageEventData.getEntityName(), getFirstPerson(), getDf().format(lightningDamage));
